@@ -9,6 +9,7 @@ import com.delivery.api.domain.user.controller.model.UserLoginRequest;
 import com.delivery.api.domain.user.controller.model.UserRegisterRequest;
 import com.delivery.api.domain.user.controller.model.UserResponse;
 import com.delivery.api.domain.user.converter.UserConverter;
+import com.delivery.api.domain.user.model.User;
 import com.delivery.api.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 
@@ -58,5 +59,12 @@ public class UserBusiness {
         var tokenResponse = tokenBusiness.issueToken(userEntity);
 
         return tokenResponse;
+    }
+
+    public UserResponse me(User user) {
+        var userEntity = userService.getUserWithThrow(user.getId());
+        var response = userConverter.toResponse(userEntity);
+
+        return response;
     }
 }
