@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: store-admin
   jpa:
     show-sql: true
     properties:
@@ -13,12 +15,4 @@ spring:
     username: root
     password: root1234!!
 server:
-  port: 8090
-
-token:
-  secret:
-    key: SpringBootJWTHelperTokenSecretKeyValue123!@#
-  access-token:
-    plus-hour: 1
-  refresh-token:
-    plus-hour: 12
+  port: 8091
