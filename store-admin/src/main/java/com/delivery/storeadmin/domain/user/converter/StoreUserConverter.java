@@ -5,6 +5,7 @@ import com.delivery.db.store.StoreRepository;
 import com.delivery.db.store.enums.StoreStatus;
 import com.delivery.db.storeuser.StoreUserEntity;
 import com.delivery.storeadmin.common.annotation.Converter;
+import com.delivery.storeadmin.domain.authorization.model.UserSession;
 import com.delivery.storeadmin.domain.user.controller.model.StoreUserRegisterRequest;
 import com.delivery.storeadmin.domain.user.controller.model.StoreUserResponse;
 import lombok.RequiredArgsConstructor;
@@ -53,4 +54,26 @@ public class StoreUserConverter {
             .build();
     }
 
+    public StoreUserResponse toResponse(UserSession userSession) {
+        return StoreUserResponse.builder()
+            .user(
+                StoreUserResponse.UserResponse.builder()
+                    .id(userSession.getUserId())
+                    .email(userSession.getEmail())
+                    .status(userSession.getStatus())
+                    .role(userSession.getRole())
+                    .registeredAt(userSession.getRegisteredAt())
+                    .unregisteredAt(userSession.getUnregisteredAt())
+                    .lastLoginAt(userSession.getLastLoginAt())
+                    .build()
+            )
+            .store(
+                StoreUserResponse.StoreResponse.builder()
+                    .id(userSession.getStoreId())
+                    .name(userSession.getStoreName())
+                    .build()
+            )
+            .build();
+
+    }
 }
