@@ -1,4 +1,4 @@
-package com.delivery.storeadmin.domain.user.controller.model;
+package com.delivery.storeadmin.domain.storeuser.controller.model;
 
 import com.delivery.db.storeuser.enums.StoreUserRole;
 import lombok.AllArgsConstructor;

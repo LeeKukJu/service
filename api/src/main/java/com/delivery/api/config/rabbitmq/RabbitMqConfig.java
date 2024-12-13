@@ -22,7 +22,7 @@ public class RabbitMqConfig {
 
     @Bean
     public Queue queue() {
-        return new Queue("delivery.queue");
+        return new Queue("delivery.queue", true);
     }
 
     // Exchange 와 Queue 를 바인딩

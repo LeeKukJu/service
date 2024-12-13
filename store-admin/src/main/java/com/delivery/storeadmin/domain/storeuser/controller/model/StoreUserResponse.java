@@ -1,4 +1,4 @@
-package com.delivery.storeadmin.domain.user.controller.model;
+package com.delivery.storeadmin.domain.storeuser.controller.model;
 
 import com.delivery.db.storeuser.enums.StoreUserRole;
 import com.delivery.db.storeuser.enums.StoreUserStatus;
@@ -7,9 +7,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import java.time.LocalDateTime;
 
 @Data
